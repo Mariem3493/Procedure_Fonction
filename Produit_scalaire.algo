@@ -1,0 +1,51 @@
+ALGORITHM Dot_product
+//Procédure
+PROCEDURE dot_product(x: INTEGER, V1 : ARRAY_OF FLOAT; V2 : ARRAY_OF FLOAT)
+VAR
+  Ps: FLOAT; 
+  i: INTEGER; 
+  j: INTEGER;
+BEGIN
+Ps ← 0;
+    FOR i FROM 1 TO x STEP step  DO
+        Ps← Ps+(V1[i]*V2[i]);
+    END_FOR
+END
+// Fonction 
+FUNCTION dot_product(x: INTEGER, V1 : ARRAY_OF FLOAT; V2 : ARRAY_OF FLOAT) : FLOAT 
+VAR 
+  Ps: FLOAT; 
+  i: INTEGER; 
+  j: INTEGER;
+BEGIN
+    Ps ← 0;
+    FOR i FROM 1 TO x STEP step  DO
+        Ps← Ps+(V1[i]*V2[i])
+    END_FOR
+    RETURN Ps ;
+END 
+// Algorithme 
+VAR
+    i : INTEGER;
+    n : INTEGER;
+    Ps : INTEGER;
+    V1,V2:ARRAY_OF FLOAT;
+BEGIN
+    Write("Donner la taille des deux vecteurs");
+    Read(n);
+    FOR i FROM 1 TO n STEP step  DO
+        Write( "Donner les éléments du premier vecteur");
+        Read(V1[i]);
+    END_FOR
+    FOR i FROM 1 TO n STEP step  DO
+        Write("Donner les éléments du deuxième vecteur");
+        Read(V2[i]);
+    END_FOR
+    Ps ← dot_product(n,V1,V1);
+    IF (Ps=0) THEN
+        Write("Les deux vecteurs sont orthogonaux");
+    ELSE
+        Write("Les deux vecteurs ne sont pas orthogonaux")
+    END_IF
+END
+

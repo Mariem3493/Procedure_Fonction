@@ -1,0 +1,47 @@
+ALGORITHM Somme
+VAR
+    Sum : INTEGER;
+    Tab1 : ARRAY_OF INTEGER;
+    Tab2 : ARRAY_OF INTEGER;
+    Tab3 : ARRAY_OF INTEGER;
+    i , j , k , x1 , x2 , x3 : INTEGER;
+BEGIN
+  Sum ← 0;
+ Write("Donner le nombre d'élement du premier tableau");
+ Read (x1);
+ Write ("Donner le nombre d'élement du deuxième tableau");
+ Read (x2);
+ // Taille du tableau contenant les éléments dictincts
+    IF (x1>x2) THEN
+         x3 ← x1;
+    ELSE
+         x3 ← x2;
+    END_IF
+// Comparaison de chaque élément du premier tableau par chaque élément du deuxième tableau
+    FOR i FROM 1 TO x1 STEP step  DO
+    Write("Donner la valeur de l'élément" x1)
+    Read(Tab1[i])
+    IF (Tab1[i]!=Tab2[i] ) THEN
+       FOR k FROM 1 TO x3 STEP step  DO
+        Tab3[k]←Tab1[i];
+        Sum ← Sum + Tab1[i];
+       END_FOR
+    END_IF
+    END_FOR
+// Comparaison de chaque élément du deuxième tableau par chaque élément du premier tableau
+    FOR j FROM 1 TO x2 STEP step  DO
+    Write("Donner la valeur de l'élément:" x2)
+    Read(Tab2[j])
+        IF (Tab2[j]!=Tab1[j]) and
+        FOR k FROM 1 TO x3 STEP step  DO
+           (Tab2[j]!=Tab3[k]) THEN
+           Sum ← Sum + Tab2[j];
+        END_FOR      
+        END_IF
+    END_FOR
+    Write("La somme des éléments distincts est: Sum")
+    FOR k FROM 1 TO x3 STEP step  DO
+        Write("Les éléments distints sont:" Tab3[k])
+    END_FOR
+    
+END
